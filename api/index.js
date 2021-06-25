@@ -38,24 +38,24 @@ bot.on('message', (msg) => {
         M1 = s [1]
         model.predict(
             [
-                parseFloat(s[2]), // string to float
-                parseFloat(s[3]),
-                parseFloat(s[4])
+                parseFloat(s[0]), // string to float
+                parseFloat(s[1]),
+                parseFloat(s[2])
             ]
         ).then((jres)=>{
             console.log(jres);
             bot.sendMessage(
                 msg.chat.id,
-                `nilai X yang diprediksi adalah ${jres [2]} `
+                `nilai X yang diprediksi adalah ${jres [0]} `
                 
             ); 
             bot.sendMessage(
                 msg.chat.id,
-                `nilai Y yang diprediksi adalah ${jres [3]} `
+                `nilai Y yang diprediksi adalah ${jres [1]} `
             );
              bot.sendMessage(
                 msg.chat.id,
-                `nilai Z yang diprediksi adalah ${jres [4]} `
+                `nilai Z yang diprediksi adalah ${jres [2]} `
             );
         })
     }else{
